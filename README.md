@@ -49,9 +49,9 @@ $$ \text{Recall}  >= .90 $$
 
 ## The Dataset
 
-The dataset used for our work consists of xray images of lungs tested negative and positive for Covid-19 from the IBM 2020 Call for Code Global Challenge, and had graciously been preprocessed by Casper Hansen, who's work can be found here: https://developer.ibm.com/articles/using-deep-learning-to-take-on-covid-19/ . The data itself was biased with 98.9% of the images being of covid-19 negative cases:
+The dataset used for our work consists of xray images of lungs tested negative and positive for Covid-19 from the IBM 2020 Call for Code Global Challenge, and had graciously been preprocessed by Casper Hansen, who's work can be found here: https://developer.ibm.com/articles/using-deep-learning-to-take-on-covid-19/ . The data itself was biased with 98.9% of the images being of covid-19 negative cases, and so the normal dataset was shortened to the first 99 instances:
 
-<img src='images\tensorboard_img\data_dist.png'>
+<img src='images\dist.PNG'>
 
 These images have unizue pixel intensities and shapes related to their specific case:
 
@@ -59,26 +59,25 @@ These images have unizue pixel intensities and shapes related to their specific 
 
 
 
-
 ### Modeling
 
 After modeling with various CNN's the most ppromising involved transfer learning with VGG19:
 
-<img src='images\tensorboard_img\vgg_top.png', width="250", align="center">
-<img src='images\tensorboard_img\vgg_middle.png', width="250", align="center">          
-<img src='images\tensorboard_img\vgg_bottom.png', width="250", align="center">
+<img src='images\tensorboard_img\vgg_top.png'>
+<img src='images\tensorboard_img\vgg_middle.png'>          
+<img src='images\tensorboard_img\vgg_bottom.png'>
 
 Our performance however did not meet standards set by the FDA for approved Covid-19 testing:
 
-<img src='images\tensorboard_img\vgg_success_matrix.png', align="center">
+<img src='images\tensorboard_img\vgg_success_matrix.png'>
           
-<img src='images\tensorboard_img\vgg_success_report.png', align="center">
+<img src='images\tensorboard_img\vgg_success_report.png'>
 
 ### Visulizations
 
 When visualizing the activation layers of the CNN, it was clear that noise coming from outside of the body space within the images was influencing the network's predictions. It appears more common that images of positive cases contained some labeling format not present in the negative cases, and therefore could allow the model to 'game' the assessment. Observe the top left corner in these images:
 
-<img src='images\tensorboard_img\layer_images.png', width="750", align="center">
+<img src='images\tensorboard_img\layer_images.png'>
 
 ### Conclusion
 
