@@ -70,9 +70,9 @@ After modeling with various CNN's the most ppromising involved transfer learning
 
 Our performance however did not meet standards set by the FDA for approved Covid-19 testing:
 
-<img src='images\tensorboard_img\vgg_results2.png' align="center">
+<img src='images\tensorboard_img\vgg_success_matrix.png' align="center">
           
-<img src='images\tensorboard_img\class_report1.png' align="center">
+<img src='images\tensorboard_img\vgg_success_report.png' align="center">
 
 ### Visulizations
 
@@ -82,6 +82,6 @@ When visualizing the activation layers of the CNN, it was clear that noise comin
 
 ### Conclusion
 
-In conclusion, while the goal of creating visualizations that may be of use to the medical research community was achieved, we were not able to meet the FDA standards for Covid-19 testing. The most likely cause of this is due to the limited and bias nature of the data available during testing. With such a small dataset to work with, there is most likely strong sampling bias. Our covid-19 samples are so few, that they are most likely from the same general location, and most certainly from the same country. With covid-19 being a pandemic, to model accurately we would need at least several hundred more cases to observe.
+In conclusion, while the goal of creating visualizations that may be of use to the medical research community was achieved, we were also able to meet the FDA standards for Covid-19 testing. With such a small dataset to work with, there is most likely strong sampling bias. Our covid-19 samples are so few, that they are most likely from the same general location, and most certainly from the same country. With covid-19 being a pandemic, to model accurately we would need at least several hundred more cases to observe.
 
 Until the time that increasing the dataset is possible, it will be most prudent to work with less complex models than Inception, which was not able to identify the covid-19 positive cases at all.
