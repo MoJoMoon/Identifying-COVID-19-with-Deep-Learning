@@ -64,21 +64,21 @@ These images have unizue pixel intensities and shapes related to their specific 
 
 After modeling with various CNN's the most ppromising involved transfer learning with VGG19:
 
-<img src='images\tensorboard_img\vgg_top.png' width="250" align="center">
-<img src='images\tensorboard_img\vgg_middle.png' width="250" align="center">          
-<img src='images\tensorboard_img\vgg_bottom.png' width="250" align="center">
+<img src='images\tensorboard_img\vgg_top.png', width="250", align="center">
+<img src='images\tensorboard_img\vgg_middle.png', width="250", align="center">          
+<img src='images\tensorboard_img\vgg_bottom.png', width="250", align="center">
 
 Our performance however did not meet standards set by the FDA for approved Covid-19 testing:
 
-<img src='images\tensorboard_img\vgg_success_matrix.png' align="center">
+<img src='images\tensorboard_img\vgg_success_matrix.png', align="center">
           
-<img src='images\tensorboard_img\vgg_success_report.png' align="center">
+<img src='images\tensorboard_img\vgg_success_report.png', align="center">
 
 ### Visulizations
 
 When visualizing the activation layers of the CNN, it was clear that noise coming from outside of the body space within the images was influencing the network's predictions. It appears more common that images of positive cases contained some labeling format not present in the negative cases, and therefore could allow the model to 'game' the assessment. Observe the top left corner in these images:
 
-<img src='images\tensorboard_img\layer_images.png' width="750" align="center">
+<img src='images\tensorboard_img\layer_images.png', width="750", align="center">
 
 ### Conclusion
 
