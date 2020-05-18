@@ -63,9 +63,7 @@ These images have unizue pixel intensities and shapes related to their specific 
 
 After modeling with various CNN's the most ppromising involved transfer learning with VGG19:
 
-<img src='images\tensorboard_img\vgg_top.PNG'>
-<img src='images\tensorboard_img\vgg_middle.PNG'>          
-<img src='images\tensorboard_img\vgg_bottom.PNG'>
+<img src='images\tensorboard_img\full_vgg19.png'>
 
 Our performance was able to meet standards set by the FDA for approved Covid-19 testing for recall:
 
