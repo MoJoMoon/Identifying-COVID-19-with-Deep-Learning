@@ -22,7 +22,7 @@ There are two main objectives for this portion of the aforementioned proposal, w
 
 Our task is essentially a binary classification problem, where an x-ray image is considered input, and **our model produces an prediction of whether this image is of a COVID-19 infected lung, or is not**. With these objectives and framework in mind, the threshold of success mainly rests on the accuracy of our model. We will set the goal of our model attaining **at least an 80% accuracy**. With accuracy here being defined as:
 
-$$\text{Accuracy} = \frac{\text{TP+TN}}{{\text{TP+TN+FP+FN}}$$
+$$ \text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN} $$
 
 Then our model will be successful where:
 
@@ -36,15 +36,15 @@ In the case where our model predicts incorrectly, we **prefer a false positive m
 For our model's evaluation this is further defined as:
 
 
-$$\text{Precision} = \frac{\text{Number of True Positives}}{\text{Number of Predicted Positives}}$$
+$$\text{Precision} = \text{\frac{Number of True Positives}{Number of Predicted Positives}}$$
 
   
 
-$$\text{Recall} = \frac{\text{Number of True Positives}}{\text{Number of Actual Total Positives}}$$
+$$\text{Recall} = \text{\frac{Number of True Positives}{Number of Actual Total Positives}}$$
 
 Our model will achieve:
 
-$$\text{Recall} >= .90$$
+$$ Recall >= .90 $$
 
 
 ## The Dataset
