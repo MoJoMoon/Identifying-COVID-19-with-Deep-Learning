@@ -22,11 +22,11 @@ There are two main objectives for this portion of the aforementioned proposal, w
 
 Our task is essentially a binary classification problem, where an x-ray image is considered input, and **our model produces an prediction of whether this image is of a COVID-19 infected lung, or is not**. With these objectives and framework in mind, the threshold of success mainly rests on the accuracy of our model. We will set the goal of our model attaining **at least an 80% accuracy**. With accuracy here being defined as:
 
-$$Accuracy = \frac{TP+TN}{TP+TN+FP+FN}$$
+$$\text{Accuracy} = \frac{\text{TP+TN}}{{\text{TP+TN+FP+FN}}$$
 
 Then our model will be successful where:
 
-$$Accuracy >= .80$$
+$$\text{Accuracy} >= .80$$
 
 
 In the case where our model predicts incorrectly, we **prefer a false positive more than a false negative**. In the case of a false positive, a traveler is determined as infected where they are not. In this case that person would be held for further testing, potentially missing their flight. However **in the case of a false negative, our model has determined that an image of lungs that are COVID-19 infected are not, and thus that traveler would continue on potentially infecting others**. Therefore we aim for a model that meets the most recent standards as defined by the FDA for Covid-19 tests:
@@ -36,15 +36,15 @@ In the case where our model predicts incorrectly, we **prefer a false positive m
 For our model's evaluation this is further defined as:
 
 
-$$ \text{Precision} = \frac{\text{Number of True Positives}}{\text{Number of Predicted Positives}} $$
+$$\text{Precision} = \frac{\text{Number of True Positives}}{\text{Number of Predicted Positives}}$$
 
   
 
-$$ \text{Recall} = \frac{\text{Number of True Positives}}{\text{Number of Actual Total Positives}} $$
+$$\text{Recall} = \frac{\text{Number of True Positives}}{\text{Number of Actual Total Positives}}$$
 
 Our model will achieve:
 
-$$ \text{Recall}  >= .90 $$
+$$\text{Recall} >= .90$$
 
 
 ## The Dataset
@@ -53,7 +53,7 @@ The dataset used for our work consists of xray images of lungs tested negative a
 
 <img src='images\dist.PNG'>
 
-These images have unizue pixel intensities and shapes related to their specific case:
+These images have unique pixel intensities and shapes related to their specific case:
 
 <img src='images\tensorboard_img\pos_ex.png'>
 
@@ -61,11 +61,15 @@ These images have unizue pixel intensities and shapes related to their specific 
 
 ### Modeling
 
-After modeling with various CNN's the most ppromising involved transfer learning with VGG19:
+After modeling with various CNN's the most promising involved transfer learning with VGG19, a 19 layer convolutional neural network created by the Oxford Visual Geometry Group for the ImageNet Large Scale Visual Recognition Challenge ILSVRC-2014 competition trained on 4 GPUs for 2–3 weeks.
+
+Transfer learning as defined by Goodfellow et al in Deep Learning is a "Situation where what has been learned in one setting is exploited to improve generalization in another setting". By this definition, we used the weights gained from the Imagenet dataset, and the architecture of VGG19 to generalize for the covid-19 dataset:
 
 <img src='images\tensorboard_img\full_vgg19.png'>
 
-Our performance was able to meet standards set by the FDA for approved Covid-19 testing for recall:
+### Performance
+
+Our performance was able to meet standards set by the FDA for approved Covid-19 testing for recall, and met our goal for accuracy:
 
 <img src='images\tensorboard_img\vgg_success_matrix.PNG'>
           
