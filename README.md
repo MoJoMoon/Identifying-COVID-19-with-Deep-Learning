@@ -1,4 +1,4 @@
-# Module 4 Final Project
+# Identifying COVID-19 through Deep Learning
 
 
 <img src='images\corona_gif.gif' width="750" align="center">
