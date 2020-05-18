@@ -22,11 +22,11 @@ There are two main objectives for this portion of the aforementioned proposal, w
 
 Our task is essentially a binary classification problem, where an x-ray image is considered input, and **our model produces an prediction of whether this image is of a COVID-19 infected lung, or is not**. With these objectives and framework in mind, the threshold of success mainly rests on the accuracy of our model. We will set the goal of our model attaining **at least an 80% accuracy**. With accuracy here being defined as:
 
-$$ \text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN} $$
+$$ \text{Accuracy} = \frac{\text{Number of True Positives + True Negatives}}{\text{Total Observations}} $$
 
 Then our model will be successful where:
 
-$$\text{Accuracy} >= .80$$
+$$ \text{Accuracy} >= .80$$
 
 
 In the case where our model predicts incorrectly, we **prefer a false positive more than a false negative**. In the case of a false positive, a traveler is determined as infected where they are not. In this case that person would be held for further testing, potentially missing their flight. However **in the case of a false negative, our model has determined that an image of lungs that are COVID-19 infected are not, and thus that traveler would continue on potentially infecting others**. Therefore we aim for a model that meets the most recent standards as defined by the FDA for Covid-19 tests:
@@ -36,15 +36,15 @@ In the case where our model predicts incorrectly, we **prefer a false positive m
 For our model's evaluation this is further defined as:
 
 
-$$\text{Precision} = \text{\frac{Number of True Positives}{Number of Predicted Positives}}$$
+$$ \text{Precision} = \frac{\text{Number of True Positives}}{\text{Number of Predicted Positives}} $$
 
-  
+&
 
-$$\text{Recall} = \text{\frac{Number of True Positives}{Number of Actual Total Positives}}$$
+$$ \text{Recall} = \frac{\text{Number of True Positives}}{\text{Number of Actual Total Positives}} $$
 
 Our model will achieve:
 
-$$ Recall >= .90 $$
+$$ \text{Recall} >= .90 $$
 
 
 ## The Dataset
